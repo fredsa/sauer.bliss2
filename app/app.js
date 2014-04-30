@@ -7,9 +7,11 @@ var myApp = angular.module('myApp', [
 
 var MyCtrl = function($scope, $log, $http) {
   $scope.cmd = "pwd \nls";
-  $scope.output = "the output";
+  $scope.output = "{output goes here}";
 
   $scope.execute = function(cmd) {
+    $scope.output = "Running...";
+
     $http.post('/bliss2', cmd)
     .success(function(data, status, headers, config) {
       $scope.output = "OK " + status + "\n" + data;
@@ -18,7 +20,6 @@ var MyCtrl = function($scope, $log, $http) {
       $scope.output = "ERROR " + status + "\n" + data;
     });
 
-    $scope.output = "I ran " + cmd;
   }
 
   $scope.onkey = function(evt) {
