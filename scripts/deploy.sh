@@ -26,3 +26,6 @@ $APPCFG --oauth2 update --no_precompilation -V $VERSION . $*
 
 echo -e "\n*** SETTING DEFAULT VERSION ***\n"
 $APPCFG --oauth2 set_default_version -V $VERSION . $*
+
+echo -e "\n*** ENABLING DEBUG ***\n"
+$APPCFG --email fredsa@google.com debug -V $VERSION . $*
