@@ -1,0 +1,26 @@
+application: fredsa-bliss2
+version: one
+runtime: python27
+api_version: 1
+threadsafe: false
+
+vm: true
+
+manual_scaling:
+  instances: 1
+
+vm_settings:
+  machine_type: n1-standard-1
+  apt_get_install: vim
+
+handlers:
+- url: /bliss2
+  script: bliss2.app
+  secure: always
+
+- url: /
+  static_files: app/index.html
+  upload: app
+
+- url: /app
+  static_dir: app

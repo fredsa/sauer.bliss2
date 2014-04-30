@@ -1,0 +1,14 @@
+.output {
+  background-color: gray;
+}
+
+.input , .output {
+  white-space: pre;
+  font-family: monospace;
+}
+
+.input {
+  width: 100%;
+  height: 5em;
+  color: blue;
+}
