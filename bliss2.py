@@ -22,8 +22,8 @@ class MainHandler(webapp2.RequestHandler):
       args = shlex.split(cmd)
       proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=True)
       (out, err) = proc.communicate()
-    self.response.write("program out:" + out)
-    self.response.write("program err:" + err)
+    self.response.write("program out: {}".format(out))
+    self.response.write("program err: {}".format(err))
 
 app = webapp2.WSGIApplication([
     ('/.*', MainHandler)
