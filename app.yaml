@@ -27,3 +27,8 @@ handlers:
   static_files: app/index.html
   upload: app/index.html
   secure: always
+
+# TODO: remove me
+- url: /_ah/.*
+  script: bliss2.app
+  secure: always
